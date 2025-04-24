@@ -9,14 +9,15 @@ body {
     background-color: hsl(210, 46%, 95%);
     padding: 0 7rem;
     display: flex;
-   justify-content: space-between;
-   align-items: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 article {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
 
 img {
     float: left;
@@ -57,37 +58,69 @@ h3 {
     color: #fff;
 }
 
-#one {
+article .block:first-child {
     background-color: hsl(263, 55%, 52%);
     width: 28rem;
-}
-
-#two {
+  }
+  
+  article .block:nth-child(2) {
     background-color: hsl(217, 19%, 35%);
     width: 12rem;
-}
-
-#four {
+  }
+  
+  article .block:nth-child(3) {
+    background-color: #fff;
+    width: 13rem;
+  }
+  
+  article .block:nth-child(3) .name,
+  article .block:nth-child(3) .job,
+  article .block:nth-child(3) .opacity {
+    color: black;
+  }
+  
+  article .block:nth-child(3) .job {
+    opacity: 0.5;
+  }
+  
+  article .block:nth-child(4) {
     background-color: hsl(219, 29%, 14%);
     width: 27rem;
     margin-left: -14rem;
-}
-
-#three,
-#five {
+    h3{
+        color: #fff;
+    }
+  }
+  
+  article .block:nth-child(5) {
     background-color: #fff;
-    .name,
-    h3,
-    .job,
-    .opacity {
-        color: black;
+  }
+  
+  article .block:nth-child(5) .name,
+  article .block:nth-child(5) h3,
+  article .block:nth-child(5) .job,
+  article .block:nth-child(5) .opacity {
+    color: black;
+  }
+  
+  article .block:nth-child(5) .job {
+    opacity: 0.5;
+  }
+
+@media(max-width:768px) {
+    body {
+        padding: 0;
     }
 
-    .job {
-        opacity: .5;
+    div {
+        width: auto !important;
     }
-}
 
-#three {
-    width: 13rem;
+    article {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    article .block:nth-child(4) {
+        margin: 1rem;
+    }
 }
